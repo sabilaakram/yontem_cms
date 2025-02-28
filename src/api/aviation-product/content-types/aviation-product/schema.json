@@ -1,0 +1,71 @@
+{
+  "kind": "collectionType",
+  "collectionName": "aviation_products",
+  "info": {
+    "singularName": "aviation-product",
+    "pluralName": "aviation-products",
+    "displayName": "aviation products",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "product_name": {
+      "type": "string"
+    },
+    "product_main_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "product_extra_images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "product_features": {
+      "type": "blocks"
+    },
+    "product_header_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "product_name"
+    },
+    "product_overview": {
+      "type": "blocks"
+    },
+    "Features_explained": {
+      "type": "blocks"
+    },
+    "additional_benefits": {
+      "type": "blocks"
+    },
+    "product_short_description": {
+      "type": "text"
+    }
+  }
+}
