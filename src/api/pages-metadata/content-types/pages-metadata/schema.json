@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages_metadatas",
+  "info": {
+    "singularName": "pages-metadata",
+    "pluralName": "pages-metadatas",
+    "displayName": "pages-metadata",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "metatitle": {
+      "type": "string",
+      "required": true
+    },
+    "metadescription": {
+      "type": "text",
+      "required": true
+    },
+    "metakeywords": {
+      "type": "blocks",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "required": true
+    }
+  }
+}

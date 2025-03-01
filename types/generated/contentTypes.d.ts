@@ -461,6 +461,39 @@ export interface ApiAviationProductAviationProduct
   };
 }
 
+export interface ApiPagesMetadataPagesMetadata
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'pages_metadatas';
+  info: {
+    description: '';
+    displayName: 'pages-metadata';
+    pluralName: 'pages-metadatas';
+    singularName: 'pages-metadata';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::pages-metadata.pages-metadata'
+    > &
+      Schema.Attribute.Private;
+    metadescription: Schema.Attribute.Text & Schema.Attribute.Required;
+    metakeywords: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    metatitle: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -972,6 +1005,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::aviation-maintenance-product.aviation-maintenance-product': ApiAviationMaintenanceProductAviationMaintenanceProduct;
       'api::aviation-product.aviation-product': ApiAviationProductAviationProduct;
+      'api::pages-metadata.pages-metadata': ApiPagesMetadataPagesMetadata;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
