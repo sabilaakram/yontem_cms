@@ -4,7 +4,7 @@
   "info": {
     "singularName": "aviation-product",
     "pluralName": "aviation-products",
-    "displayName": "aviation products",
+    "displayName": "aviation training products",
     "description": ""
   },
   "options": {
@@ -66,6 +66,18 @@
     },
     "product_short_description": {
       "type": "text"
+    },
+    "metatitle": {
+      "type": "string",
+      "required": true
+    },
+    "metadescription": {
+      "type": "text",
+      "required": true
+    },
+    "metakeywords": {
+      "type": "blocks",
+      "required": true
     }
   }
 }

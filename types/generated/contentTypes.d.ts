@@ -393,6 +393,9 @@ export interface ApiAviationMaintenanceProductAviationMaintenanceProduct
       'api::aviation-maintenance-product.aviation-maintenance-product'
     > &
       Schema.Attribute.Private;
+    metadescription: Schema.Attribute.Text & Schema.Attribute.Required;
+    metakeywords: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    metatitle: Schema.Attribute.String & Schema.Attribute.Required;
     product_extra_images: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
@@ -420,7 +423,7 @@ export interface ApiAviationProductAviationProduct
   collectionName: 'aviation_products';
   info: {
     description: '';
-    displayName: 'aviation products';
+    displayName: 'aviation training products';
     pluralName: 'aviation-products';
     singularName: 'aviation-product';
   };
@@ -439,6 +442,9 @@ export interface ApiAviationProductAviationProduct
       'api::aviation-product.aviation-product'
     > &
       Schema.Attribute.Private;
+    metadescription: Schema.Attribute.Text & Schema.Attribute.Required;
+    metakeywords: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    metatitle: Schema.Attribute.String & Schema.Attribute.Required;
     product_extra_images: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true

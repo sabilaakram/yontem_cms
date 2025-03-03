@@ -65,6 +65,18 @@
     },
     "product_short_description": {
       "type": "text"
+    },
+    "metatitle": {
+      "type": "string",
+      "required": true
+    },
+    "metadescription": {
+      "type": "text",
+      "required": true
+    },
+    "metakeywords": {
+      "type": "blocks",
+      "required": true
     }
   }
 }
