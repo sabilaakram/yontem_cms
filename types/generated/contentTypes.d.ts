@@ -467,6 +467,42 @@ export interface ApiAviationProductAviationProduct
   };
 }
 
+export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
+  collectionName: 'blogs';
+  info: {
+    displayName: 'Blog';
+    pluralName: 'blogs';
+    singularName: 'blog';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    blog_data: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    blog_short_description: Schema.Attribute.Text & Schema.Attribute.Required;
+    Blog_title: Schema.Attribute.String & Schema.Attribute.Required;
+    conclusion: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    cta_button: Schema.Attribute.String & Schema.Attribute.Required;
+    cta_description: Schema.Attribute.Text & Schema.Attribute.Required;
+    Cta_text: Schema.Attribute.String & Schema.Attribute.Required;
+    Introduction: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'> &
+      Schema.Attribute.Private;
+    metadescription: Schema.Attribute.String & Schema.Attribute.Required;
+    metakeywords: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    metatitle: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'Blog_title'> & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPagesMetadataPagesMetadata
   extends Struct.CollectionTypeSchema {
   collectionName: 'pages_metadatas';
@@ -1011,6 +1047,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::aviation-maintenance-product.aviation-maintenance-product': ApiAviationMaintenanceProductAviationMaintenanceProduct;
       'api::aviation-product.aviation-product': ApiAviationProductAviationProduct;
+      'api::blog.blog': ApiBlogBlog;
       'api::pages-metadata.pages-metadata': ApiPagesMetadataPagesMetadata;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

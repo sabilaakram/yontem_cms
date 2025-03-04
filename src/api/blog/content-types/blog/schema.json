@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blogs",
+  "info": {
+    "singularName": "blog",
+    "pluralName": "blogs",
+    "displayName": "Blog"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "metatitle": {
+      "type": "string",
+      "required": true
+    },
+    "metadescription": {
+      "type": "string",
+      "required": true
+    },
+    "metakeywords": {
+      "type": "blocks",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "required": true,
+      "targetField": "Blog_title"
+    },
+    "Blog_title": {
+      "type": "string",
+      "required": true
+    },
+    "blog_short_description": {
+      "type": "text",
+      "required": true
+    },
+    "Introduction": {
+      "type": "blocks",
+      "required": true
+    },
+    "blog_data": {
+      "type": "blocks",
+      "required": true
+    },
+    "conclusion": {
+      "type": "blocks",
+      "required": true
+    },
+    "Cta_text": {
+      "type": "string",
+      "required": true
+    },
+    "cta_description": {
+      "type": "text",
+      "required": true
+    },
+    "cta_button": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
